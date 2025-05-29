@@ -1,0 +1,89 @@
+.welcome-body{
+    background-color: #8BAAAD;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-container{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.welcome-logo{
+    font-size: 46px;
+}
+.welcome-form-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.welcome-form-body{
+    margin-top: 20px;
+    background-color: #D9D9D9;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 300px;
+    height: auto;
+
+    border: solid;
+    border-radius: 15px;
+    border-width: 0px;
+}
+.welcome-message{
+    color: #F4FFF8;
+    font-size: 30px;
+    margin: 0;
+}
+.welcome-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 200px;
+
+    justify-content: space-evenly;
+}
+.welcome-form-input{
+    width: 240px;
+    height: 40px;
+
+    border: solid;
+    border-width: 1px;
+    border-radius: 8px;
+
+    background-color: #F4FFF8;
+    border-color: #CCCCCC;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+
+    padding-left: 10px;
+}
+.welcome-form-button{
+    width: 150px;
+    height: 40px;
+
+    border: solid;
+    border-width: 0px;
+    border-radius: 8px;
+
+    background-color: #245C5E;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+    color: #F4FFF8;
+}
+.welcome-type{
+    font-size: 40px;
+    font-weight: 100;
+    margin: 20px;
+}
+.welcome-form-navigation{
+    padding: 15px;
+}

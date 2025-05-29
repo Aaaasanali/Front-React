@@ -1,0 +1,162 @@
+#home-body{
+    background-color: #8BAAAD;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home-header{
+    background-color: #245C5E;
+    width: 100%;
+    height: 79px;
+    color: #F4FFF8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#home-logo{
+    margin: auto;
+}
+#home-logout-btn{
+    position: absolute;
+    left: 50px;
+}
+#home-form{
+    margin-top: 40px;
+    width: 420px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#home-form-input{
+    width: 320px;
+    height: 40px;
+
+    border: solid;
+    border-width: 1px;
+    border-radius: 8px;
+
+    background-color: #F4FFF8;
+    border-color: #CCCCCC;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+
+    padding-left: 20px;
+}
+#home-form-input:active{
+    border-color: #CCCCCC;
+}
+#home-form-button{
+    width: 60px;
+    height: 40px;
+
+    border: solid;
+    border-width: 0px;
+    border-radius: 8px;
+
+    background-color: #CCCCCC;
+    border-color: #CCCCCC;
+
+    font-family: 'Inder', sans-serif;
+}
+#home-form-button:hover{
+    cursor: pointer;
+    background-color: #bbbaba;
+
+    transition: 0.2s ease;
+}
+#home-form-button:active{
+    cursor: pointer;
+    background-color: #cbcbcb;
+
+    transition: 0.2s ease;
+}
+#home-tasks-container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 1000px;
+}
+.home-tasks-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-tasks-list-header{
+    color: #F4FFF8;
+    margin: 0;
+
+    font-size: 40px;
+}
+hr{
+    width: 475px;
+    margin: 0;
+    border: solid;
+    border-width: 1px;
+    border-color:#112c2d;
+    margin-top: 15px;
+}
+.home-tasks-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+}
+.home-tasks-list-item{
+    width: 455px;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    border: solid;
+    border-width: 0cap;
+    border-radius: 8px;
+
+    background-color: #F4FFF8;
+}
+.completed{
+    background-color: #7fc99a;
+    text-decoration: line-through;
+}
+.home-tasks-list-item-button-container{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.home-tasks-list-item-button{
+    width: 27px;
+    height: 27px;
+
+    padding: 0;
+
+    background:none;
+    border: solid;
+    border-width: 0;
+    border-radius: 100%;
+    font-size: 17px;
+
+    display: flex;          
+    align-items: center;   
+    justify-content: center;
+}
+.home-tasks-list-item-button:hover{
+    background:fixed;
+    background-color: #b6beb9;
+
+    cursor: pointer;
+}

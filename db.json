@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": "2ea9",
+      "email": "dsadas@sadasd",
+      "password": "asdsdaads"
+    },
+    {
+      "id": "127b",
+      "email": "ch@ch",
+      "password": "123"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "b955",
+      "title": "dsa",
+      "completed": false
+    }
+  ]
+}

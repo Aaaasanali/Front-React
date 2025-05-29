@@ -1,0 +1,18 @@
+#logout-btn{
+    background: none;
+    border: solid;
+    border-width: 0px;
+    border-radius: 100%;
+
+    font-size: 40px;
+
+    height: 55px;
+    width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logout-btn:hover{
+    background: #2f787a;;
+}
