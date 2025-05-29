@@ -33,7 +33,7 @@
     align-items: center;
     justify-content: space-between;
 }
-#home-form-input{
+.home-form-input{
     width: 320px;
     height: 40px;
 

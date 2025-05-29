@@ -1,20 +1,24 @@
 {
   "users": [
     {
-      "id": "2ea9",
-      "email": "dsadas@sadasd",
-      "password": "asdsdaads"
+      "id": "66be",
+      "username": "chichimi",
+      "password": "123",
+      "firstname": "Asanali",
+      "lastname": "Mizambekov"
     },
     {
-      "id": "127b",
-      "email": "ch@ch",
-      "password": "123"
+      "id": "cb41",
+      "username": "popa",
+      "password": "123",
+      "firstname": "dsa",
+      "lastname": "sad"
     }
   ],
   "tasks": [
     {
-      "id": "b955",
-      "title": "dsa",
+      "id": "6524",
+      "title": "d",
       "completed": false
     }
   ]

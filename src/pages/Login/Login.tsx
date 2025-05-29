@@ -16,12 +16,11 @@ export default function Login(){
             return null;
         }
         try{
-            const res = await api.get(`/users?email=${username}&password=${password}`)
+            const res = await api.get(`/users?username=${username}&password=${password}`)
             if(res.data.length===0){
                 setError('Incorrect password or email');
                 return;
             }
-
             localStorage.setItem('token', 'fake-jwt-token');
             navigate('/');
         }

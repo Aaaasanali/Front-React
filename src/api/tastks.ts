@@ -15,10 +15,11 @@ function getHeaders(){
 }
 
 export async function fetchTasks(): Promise<Task[]>{
-    const response = await fetch(`${baseURL}/tasks`, {
-        headers: getHeaders()
-    });
-    return await response.json()
+    const userId = localStorage.getItem('userId');
+  const response = await fetch(`${baseURL}/tasks?userId=${userId}`, {
+    headers: getHeaders(),
+  });
+  return await response.json();
 }
 
 export async function createTask(title: string): Promise<Task>{
@@ -30,7 +31,7 @@ export async function createTask(title: string): Promise<Task>{
     return await response.json()
 }
 
-export async function updateTask(id: number, completed: boolean): Promise<Task>{
+export async function completeTask(id: number, completed: boolean): Promise<Task>{
     const response = await fetch(`${baseURL}/tasks/${id}`, {
         method: 'PATCH',
         headers: getHeaders(),
@@ -44,4 +45,13 @@ export async function deleteTask(id: number): Promise<void>{
         method: 'DELETE',
         headers: getHeaders()
     })
+}
+
+export async function updateTask(id: number|null, data: Partial<{ completed: boolean; title: string }>): Promise<Task> {
+  const response = await fetch(`${baseURL}/tasks/${id}`, {
+    method: 'PATCH',
+    headers: getHeaders(),
+    body: JSON.stringify(data),
+  });
+  return await response.json();
 }

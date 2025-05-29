@@ -1,0 +1,23 @@
+.welcome-form-registration{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 250px;
+
+    justify-content: space-evenly;
+}
+.welcome-form-button-registration{
+    width: auto;
+    height: 40px;
+
+    border: solid;
+    border-width: 0px;
+    border-radius: 8px;
+
+    background-color: #245C5E;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+    color: #F4FFF8;
+}
