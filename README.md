@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# 📝 Task Manager (aka To-Do List App)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Разработано для Парадокс Инк
 
-## Available Scripts
+**Стек:** React + TypeScript
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Функционал
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Добавление, удаление и завершение задач
+* Отображение списка дел и выполненных задач
+* Анимации с использованием `framer-motion`
+* Имитация бэкенда через `json-server`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠 Установка и запуск
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Клонируйте репозиторий:
 
-### `npm run build`
+```bash
+git clone https://github.com/Aaaasanali/Front-React.git
+cd Front-React
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Установите зависимости:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Установите дополнительные библиотеки (если не установлены):
 
-### `npm run eject`
+```bash
+npm install framer-motion json-server
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 4. Запустите json-server (для имитации бэкенда):
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run server
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 5. Запустите React-приложение:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+После запуска приложение автоматически откроется в браузере по адресу `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧱 Используемые технологии
+
+* ⚛️ React
+* 🟦 TypeScript
+* 🎞 framer-motion (анимации)
+* 🗄 json-server (локальный REST API)
+* 💾 localStorage (хранение данных)
+
