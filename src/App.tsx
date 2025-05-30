@@ -1,24 +1,34 @@
 import React from 'react';
-import Login from './pages/Login/Login';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Register from './pages/Register/Register';
+import Login from './pages/Welcome/Login/Login';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import Register from './pages/Welcome/Register/Register';
 import PrivateRoute from './components/PrivateRoute';
-import LogoutBtn from './components/LogoutBtn';
 import Home from './pages/Home/Home';
 import './App.css'
-function App() {
-  
+import { AnimatePresence } from 'framer-motion';
+import { Welcome } from './pages/Welcome/Welcome';
+
+
+function AppRoutes() {
+  const location = useLocation();
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-          <Route path="/" element={
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path='/:type' element={<Welcome />} />
+        <Route path="/" element={
           <PrivateRoute>
             <Home />
           </PrivateRoute>
-          }/>
+        }/>
       </Routes>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
     </BrowserRouter>
   )
 }

@@ -1,0 +1,129 @@
+.auth-form-form-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}   
+.auth-form-form-body{
+    margin-top: 20px;
+    background-color: #D9D9D9;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 300px;
+    height: auto;
+
+    border: solid;
+    border-radius: 15px;
+    border-width: 0px;
+
+    box-shadow: 3px 5px 20px #749194;
+}
+.auth-form-message{
+    color: #F4FFF8;
+    font-size: 30px;
+    margin: 0;
+
+}
+.auth-form-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 200px;
+
+    justify-content: space-evenly;
+}
+.auth-form-form-input{
+    width: 240px;
+    height: 40px;
+
+    border: solid;
+    border-width: 1px;
+    border-radius: 8px;
+
+    background-color: #F4FFF8;
+    border-color: #CCCCCC;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+
+    padding-left: 10px;
+}
+.auth-form-form-button{
+    width: 150px;
+    height: 40px;
+
+    border: solid;
+    border-width: 0px;
+    border-radius: 8px;
+
+    background-color: #245C5E;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+    color: #F4FFF8;
+}
+.auth-form-form-button:hover{
+    background-color: #204f51;
+    cursor: pointer;
+}
+.auth-form-form-button:active{
+    background-color: #1f4a4c;
+    cursor: pointer;
+}
+.auth-form-type{
+    font-size: 40px;
+    font-weight: 100;
+    margin: 20px;
+}
+.auth-form-form-navigation{
+    padding: 15px;
+}
+.auth-form-form-registration{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 300px;
+
+    justify-content: space-evenly;
+}
+.auth-form-form-button-registration{
+    width: auto;
+    height: 40px;
+
+    border: solid;
+    border-width: 0px;
+    border-radius: 8px;
+
+    background-color: #245C5E;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 20px;
+    color: #F4FFF8;
+}
+.auth-form-form-button-registration:hover{
+    background-color: #204f51;
+    cursor: pointer;
+}
+.auth-form-form-button-registration:active{
+    background-color: #1f4a4c;
+    cursor: pointer;
+}
+.auth-form-error-msg{
+    color: red;
+    text-align: center;
+}
+.auth-form-form-navigation-link{
+    text-decoration: underline;
+}
+.auth-form-form-navigation-link:hover{
+    color: rgb(62, 62, 62);
+    cursor: pointer;
+}
+.auth-form-form-navigation-link:active{
+    color: rgb(30, 30, 30);
+    cursor: pointer;
+}

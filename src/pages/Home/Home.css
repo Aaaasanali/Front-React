@@ -10,7 +10,7 @@
 #home-header{
     background-color: #245C5E;
     width: 100%;
-    height: 79px;
+    height: 100px;
     color: #F4FFF8;
 
     display: flex;
@@ -19,6 +19,9 @@
 }
 #home-logo{
     margin: auto;
+
+    white-space: nowrap;
+    overflow: hidden;
 }
 #home-logout-btn{
     position: absolute;
@@ -34,7 +37,7 @@
     justify-content: space-between;
 }
 .home-form-input{
-    width: 320px;
+    width: inherit;
     height: 40px;
 
     border: solid;
@@ -53,29 +56,27 @@
     border-color: #CCCCCC;
 }
 #home-form-button{
-    width: 60px;
+    width: inherit;
     height: 40px;
 
     border: solid;
     border-width: 0px;
     border-radius: 8px;
 
-    background-color: #CCCCCC;
-    border-color: #CCCCCC;
-
-    font-family: 'Inder', sans-serif;
+    background-color: #7bba80;
+    color: white;
+    
+    transition: 0.2s ease;
 }
 #home-form-button:hover{
     cursor: pointer;
-    background-color: #bbbaba;
+    background-color: #6ea873;
 
     transition: 0.2s ease;
 }
 #home-form-button:active{
     cursor: pointer;
-    background-color: #cbcbcb;
-
-    transition: 0.2s ease;
+    background-color: #6aaa70;
 }
 #home-tasks-container{
     margin-top: 40px;
@@ -84,11 +85,13 @@
     justify-content: space-between;
 
     width: 1000px;
+    height: 100%;
 }
 .home-tasks-list-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 .home-tasks-list-header{
     color: #F4FFF8;
@@ -101,8 +104,10 @@ hr{
     margin: 0;
     border: solid;
     border-width: 1px;
-    border-color:#112c2d;
-    margin-top: 15px;
+    border-color:#185153;
+    margin: 15px 0;
+
+    overflow: hidden;
 }
 .home-tasks-list{
     list-style-type: none;
@@ -128,10 +133,13 @@ hr{
 
     background-color: #F4FFF8;
 }
+.home-tasks-list-item:hover{
+    cursor: grab;
+}
 .completed{
     background-color: #7fc99a;
     text-decoration: line-through;
-}
+}   
 .home-tasks-list-item-button-container{
     width: auto;
     display: flex;
@@ -153,10 +161,54 @@ hr{
     display: flex;          
     align-items: center;   
     justify-content: center;
+
+    transition: 0.2s ease;
 }
 .home-tasks-list-item-button:hover{
     background:fixed;
-    background-color: #b6beb9;
+    opacity: 0.5;
 
     cursor: pointer;
 }
+.home-tasks-list-empty{
+    height: 100%;
+    width: 100%;
+
+    border: solid;
+    border-width: 0;
+    border-radius: 8px;
+
+    transition: 0.4s;
+}
+.confirmation-widnow{
+    position: absolute;
+
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+#logout-btn{
+    background: none;
+    border: solid;
+    border-width: 0px;
+    border-radius: 100%;
+
+    font-size: 40px;
+
+    height: 55px;
+    width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease;
+
+    color: white;
+}
+#logout-btn:hover{
+    transition: 1s ease;
+    background: #2f787a;
+    cursor: pointer;
+}   
