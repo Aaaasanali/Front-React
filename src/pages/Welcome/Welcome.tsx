@@ -27,7 +27,7 @@ export function Welcome() {
                 >
                     <h1 className="welcome-logo">Task Manager</h1>
                 </motion.div>
-                <motion.div initial={{ x: 600 }} animate={{ x: 0 }} exit={{ x: 600}} transition={{ duration: 1, ease: "easeInOut" }}>
+                <motion.div initial={{ x: 600, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: 600, opacity: 0}} transition={{ duration: 1, ease: "easeInOut" }}>
                     {type === 'login' ? <Login triggerExit={() => setExiting(true)}/> : <Register triggerExit={() => setExiting(true)}/>}
                 </motion.div>
             </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { completeTask, createTask, deleteTask, fetchTasks, Task, updateTask } from "../../api/tastks";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import './Home.css'
 
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -23,7 +23,7 @@ export default function Home(){
     const [tasksAnimation, setTasksAnimation] = useState(false)
     const navigate = useNavigate()
     const [showConfirm, setShowConfirm] = useState(false);
-
+    const [draggable, setDraggable] = useState(true);
     useEffect(() => {
         fetchTasks().then(setTasks).catch(console.error);
     }, []);
@@ -73,6 +73,7 @@ export default function Home(){
         const updatedTask = await updateTask(editingId, {title:editingTitle})
         setTasks(tasks.map(t => (editingId === t.id ? updatedTask : t)))
         setEditingId(null);
+        setDraggable(true);
     }
 
 
@@ -97,7 +98,7 @@ export default function Home(){
     }
     const dropHandler = async (e: React.DragEvent<HTMLLIElement>, task: Task) => {
         e.preventDefault();
-
+        console.log('here')
         e.currentTarget.style.opacity = '1';
         
         setTasks(tasks.map(t => {
@@ -209,7 +210,7 @@ export default function Home(){
                      onDragLeave={(e) => onDragLeaveListHandler(e)}>
 
                         <ul className="home-tasks-list" 
-                        >
+                        ><AnimatePresence>
                             {tasks
                             .sort((a: Task, b: Task) => a.order-b.order)
                             .filter(task => !task.completed)
@@ -218,6 +219,7 @@ export default function Home(){
                                 <motion.div 
                                 initial = {!tasksAnimation ? {y: 100, opacity: 0} : {y: 20, opacity: 0}} 
                                 animate = {!tasksAnimation ? {y: 0, opacity: 1} : {y: 0, opacity: 1}} 
+                                exit = {{y: 20, opacity: 0}} 
                                 transition={!tasksAnimation ? {duration: 2, delay: 2.5} : {duration: 0.2}}
                                 key={task.order} 
                                 >
@@ -226,12 +228,15 @@ export default function Home(){
                                 
                                 onDoubleClick={e => {
                                     
-                                    !editingId ? setEditingId(task.id) : setEditingId(null); 
-                                    setEditingTitle(task.title);}}
+                                    setEditingId(task.id)
+                                    
+                                    setEditingTitle(task.title);
+                                }}
                                 onClick={e => {
                                     if(e.shiftKey) handleComplete(task.id, !task.completed)
+                                    
                                 }}
-                                draggable={true}
+                                draggable={draggable}
                                 onDragStart={e => dragStartHandler(e, task)}
                                 onDragLeave={e => dragLeaveHandler(e, task)}
                                 onDragEnd={e => dragEndHandler(e, task)}
@@ -241,19 +246,19 @@ export default function Home(){
                                 
                                     {editingId === task.id ? (
                                         <form className="home-tasks-list-item-button-container" onSubmit={e => handleUpdate}>
-                                            <input className="home-form-input" value={editingTitle} placeholder={task.title} onChange={e => setEditingTitle(e.target.value)}
+                                            <input className="home-form-input" value={editingTitle} placeholder={task.title} onChange={e => {setEditingTitle(e.target.value);}} onClick={e => setDraggable(false)}
                                             onKeyDown={e => {
                                                 if(e.key === 'Enter'){
-                                                    handleUpdate(e)
-                                                    setEditingTitle('')
+                                                    handleUpdate(e);
+                                                    setEditingTitle('');  
                                                 }
                                                 else if(e.key === 'Escape'){
-                                                    setEditingId(null)
-                                                    setEditingTitle('')
+                                                    setEditingId(null);
+                                                    setEditingTitle('');
                                                 }
                                             }}/>
                                             
-                                            <button className="home-tasks-list-item-button" onClick={e => {setEditingId(null); setEditingTitle('')}}><CancelIcon id="icon" fontSize='inherit'/></button>
+                                            <button className="home-tasks-list-item-button" onClick={e => {setEditingId(null); setEditingTitle('');}}><CancelIcon id="icon" fontSize='inherit'/></button>
                                             <button className="home-tasks-list-item-button" onClick={e => {handleUpdate(e)}}><CompleteIcon id="icon" fontSize='inherit'/></button>
                                         </form>
                                     ):(
@@ -267,7 +272,8 @@ export default function Home(){
                                     )}
                                 </li>
                                 </motion.div>
-                            ))}
+                                
+                            ))}</AnimatePresence>
                         </ul>
                     </div>
                 </div>
@@ -289,16 +295,18 @@ export default function Home(){
                     onDrop={(e) => onDropListHandler(e)}
                     onDragLeave={(e) => onDragLeaveListHandler(e)}>
                         <ul className="home-tasks-list">
+                            <AnimatePresence>
                             {tasks.filter(task => task.completed).map(task => (
                                 <motion.div 
                                 initial = {!tasksAnimation ? {y: 100, opacity: 0} : {y: 20, opacity: 0}} 
-                                animate = {!tasksAnimation ? {y: 0, opacity: 1} : {y: 0, opacity: 1}} 
+                                animate = {!tasksAnimation ? {y: 0, opacity: 1} : {y: 0, opacity: 1}}
+                                exit = {{y: 20, opacity: 0}}  
                                 transition={!tasksAnimation ? {duration: 2, delay: 2.5}: {duration: 0.2}}
                                 key={task.order} 
                                 onAnimationComplete={e => setTasksAnimation(true)}
                                 >
                                 <li className="home-tasks-list-item completed"
-                                draggable={true}
+                                draggable={draggable}
                                 onDragStart={e => dragStartHandler(e, task)}
                                 onDragLeave={e => dragLeaveHandler(e, task)}
                                 onDragEnd={e => dragEndHandler(e, task)}
@@ -316,6 +324,7 @@ export default function Home(){
                                 </li>
                                 </motion.div>
                             ))}
+                            </AnimatePresence>
                         </ul>
                     </div>
                 </div>
